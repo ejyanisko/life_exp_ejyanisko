@@ -15,4 +15,29 @@ library(tidyverse)
 
 Here, I re-examine the analysis of Oeppen and Vaupel (2002).
 
-# Analysis
+Life Expectancy Analysis
+
+```{r}
+
+gapminder1 <- gapminder::gapminder_unfiltered
+```
+
+```{r}
+#| echo: FALSE
+
+analysis <- gapminder1 |>
+  select(country, year, lifeExp) |>
+  group_by(year) |>
+  slice_max(lifeExp, n = 1, with_ties = FALSE) |>
+  ungroup()
+  
+```
+
+```{r}
+#| echo: false
+
+sumdat <- analysis |>
+  slice_max(lifeExp, n = 1, with_ties = FALSE)
+
+sumdat
+```
