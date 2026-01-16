@@ -17,6 +17,8 @@ Here, I re-examine the analysis of Oeppen and Vaupel (2002).
 
 Life Expectancy Analysis
 
+I am importing the data set from gapminder and then finding the top life expectancy per year, and then creating a data frame that holds the country and year for the higest life expectancy overall.
+
 ```{r}
 
 gapminder1 <- gapminder::gapminder_unfiltered
